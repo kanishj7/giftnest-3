@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GiftNest Portal</title>
+<style>
+ /* basic page styles */
+ body {
+ font-family: Arial, sans-serif;
+ margin: 0;
+ padding: 0;
+ background-color: #fffaf7;
+ color: #333333;
+ }
+ /* header styling */
+ header {
+ background-color: #ffffff;
+ text-align: center;
+ padding: 20px;
+ border-bottom: 2px solid #f2d7d5;
+ }
+ header h1 {
+ margin: 0;
+ color: #d9534f;
+ font-size: 32px;
+ }
+ header p {
+ margin: 5px 0 15px 0;
+ color: #666666;
+ }
+ /* navigation menu */
+ nav {
+ margin-top: 10px;
+ }
+ nav button {
+ background-color: #d9534f;
+ color: white;
+ border: none;
+ padding: 10px 20px;
+ margin: 0 5px;
+ font-size: 14px;
+ font-weight: bold;
+ border-radius: 5px;
+ cursor: pointer;
+ }
+ nav button:hover {
+ background-color: #c9302c;
+ }
+ /* main layout container */
+ .main-content {
+ max-width: 600px;
+ margin: 30px auto;
+ padding: 0 20px;
+ }
+ /* card box for forms */
+ .card {
+ background-color: #ffffff;
+ padding: 25px;
+ border-radius: 10px;
+ border: 1px solid #f2d7d5;
+ box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+ }
+ /* form elements styling */
+ h2 {
+ margin-top: 0;
+ color: #333333;
+ }
+ .form-group {
+ margin-bottom: 15px;
+ }
+ .form-group label {
+ display: block;
+ margin-bottom: 5px;
+ font-weight: bold;
+ font-size: 14px;
+ }
+ .form-group input[type="text"],
+ .form-group input[type="email"],
+ .form-group input[type="password"],
+ .form-group input[type="date"],
+ .form-group select {
+ width: 100%;
+ padding: 8px;
+ box-sizing: border-box;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ font-size: 14px;
+ }
+ /* fieldset for vip form */
+ fieldset {
+ border: 1px solid #f2d7d5;
+ border-radius: 6px;
+ padding: 15px;
+ margin-bottom: 15px;
+ }
+ legend {
+ font-weight: bold;
+ color: #d9534f;
+ padding: 0 5px;
+ }
+ /* buttons */
+ .submit-btn {
+ width: 100%;
+ background-color: #d9534f;
+ color: white;
+ padding: 10px;
+ border: none;
+ border-radius: 5px;
+ font-size: 16px;
+ font-weight: bold;
+ cursor: pointer;
+ }
+ .submit-btn:hover {
+ background-color: #c9302c;
+ }
+ /* link styling */
+ a {
+ color: #d9534f;
+ text-decoration: none;
+ }
+ a:hover {
+ text-decoration: underline;
+ }
+ /* footer styling */
+ footer {
+ text-align: center;
+ padding: 20px;
+ margin-top: 40px;
+ background-color: #ffffff;
+ border-top: 1px solid #f2d7d5;
+ font-size: 14px;
+ }
+ /* section visibility control */
+ .page-section {
+ display: none; /* hidden by default */
+ }
+ .active-section {
+ display: block; /* shown when active */
+ }
+</style>
+</head>
+<body>
+<!-- Header & Navigation -->
+<header>
+ <h1>GiftNest</h1>
+ <p>Unwrap Joy. Share Love.</p>
+ <!-- Navigation Buttons -->
+ <nav>
+ <button onclick="showPage('login-section')">Login</button>
+ <button onclick="showPage('signup-section')">Create Account</button>
+ <button onclick="showPage('vip-section')">VIP Club</button>
+ </nav>
+</header>
+<!-- Main Content Area -->
+<div class="main-content">
+ <!-- SECTION 1: LOGIN FORM -->
+ <div id="login-section" class="page-section active-section">
+ <div class="card">
+ <h2>Log in to GiftNest</h2>
+ <form onsubmit="event.preventDefault(); alert('Logged in!');">
+ <div class="form-group">
+ <label for="login-user">Email or Username</label>
+ <input type="text" id="login-user" placeholder="Enter email or
+username" required>
+ </div>
+ <div class="form-group">
+ <label for="login-pass">Password</label>
+ <input type="password" id="login-pass" placeholder="Enter
+password" required>
+ </div>
+ <button type="submit" class="submit-btn">Log In</button>
+ </form>
+ <br>
+ <p style="text-align: center; font-size: 14px;">
+ <a href="#">Forgot password?</a>
+ </p>
+ <p style="text-align: center; font-size: 14px;">
+ Don't have an account?
+ <a href="#" onclick="showPage('signup-section')"><b>Create New
+Account</b></a>
+ </p>
+ </div>
+ </div>
+ <!-- SECTION 2: CREATE ACCOUNT FORM -->
+ <div id="signup-section" class="page-section">
+ <div class="card">
+ <h2>Create an Account</h2>
+ <p style="font-size: 14px; color: #666;">Quick and simple sign
+up.</p>
+ <form onsubmit="event.preventDefault(); alert('Account
+created!');">
+ <div class="form-group">
+ <label for="signup-contact">Email or Mobile Number</label>
+ <input type="text" id="signup-contact" placeholder="Email or
+mobile number" required>
+ </div>
+ <div class="form-group">
+ <label for="signup-name">Full Name</label>
+ <input type="text" id="signup-name" placeholder="Full name"
+required>
+ </div>
+ <div class="form-group">
+ <label for="signup-username">Username</label>
+ <input type="text" id="signup-username" placeholder="Username"
+required>
+ </div>
+ <div class="form-group">
+ <label for="signup-pass">Password</label>
+ <input type="password" id="signup-pass" placeholder="Password"
+required>
+ </div>
+ <div class="form-group">
+ <label for="signup-dob">Date of Birth</label>
+ <input type="date" id="signup-dob" required>
+ </div>
+ <p style="font-size: 12px; color: #666;">
+ By creating an account, you agree to GiftNest's <a
+href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+ </p>
+ <button type="submit" class="submit-btn">Create Account</button>
+ </form>
+ <br>
+ <p style="text-align: center; font-size: 14px;">
+ Already have an account?
+ <a href="#" onclick="showPage('login-section')"><b>Log In</b></a>
+ </p>
+ </div>
+ </div>
+ <!-- SECTION 3: VIP CLUB REGISTRATION FORM -->
+ <div id="vip-section" class="page-section">
+ <div class="card">
+ <h2>VIP Club Registration</h2>
+ <p style="font-size: 14px; color: #666;">Join for special rewards
+and birthday offers!</p>
+ <form onsubmit="event.preventDefault(); alert('Registered for VIP
+Club!');">
+ <!-- Group 1: Personal Info -->
+ <fieldset>
+ <legend>1. Personal Information</legend>
+ <div class="form-group">
+ <label for="vip-name">Full Name *</label>
+ <input type="text" id="vip-name" placeholder="Enter full
+name" required>
+ </div>
+ <div class="form-group">
+ <label for="vip-email">Email Address *</label>
+ <input type="email" id="vip-email"
+placeholder="example@email.com" required>
+ </div>
+ <div class="form-group">
+ <label for="vip-phone">Mobile Number *</label>
+ <input type="text" id="vip-phone" placeholder="10-digit
+mobile number" required>
+ </div>
+ <div class="form-group">
+ <label for="vip-pass">Password *</label>
+ <input type="password" id="vip-pass" placeholder="Create
+password" required>
+ </div>
+ <div class="form-group">
+ <label>Gender</label>
+ <input type="radio" id="male" name="gender" value="male">
+ <label for="male" style="display:inline;
+font-weight:normal;">Male</label>
+ <input type="radio" id="female" name="gender" value="female">
+ <label for="female" style="display:inline;
+font-weight:normal;">Female</label>
+ <input type="radio" id="other" name="gender" value="other">
+ <label for="other" style="display:inline;
+font-weight:normal;">Other</label>
+ </div>
+ <div class="form-group">
+ <label for="vip-dob">Date of Birth</label>
+ <input type="date" id="vip-dob">
+ </div>
+ </fieldset>
+ <!-- Group 2: Preferences -->
+ <fieldset>
+ <legend>2. Preferences</legend>
+ <div class="form-group">
+ <label for="vip-category">Favorite Category *</label>
+ <select id="vip-category" required>
+ <option value="">-- Select Preference --</option>
+ <option>Personalized Keepsakes</option>
+ <option>Gift Baskets & Hampers</option>
+ <option>Festive & Holiday Specials</option>
+ <option>Corporate Gifting</option>
+ </select>
+ </div>
+ <div class="form-group">
+ <label for="vip-recipient">Primary Recipient Type</label>
+ <input type="text" id="vip-recipient" placeholder="e.g.,
+Family, Friends">
+ </div>
+ </fieldset>
+ <button type="submit" class="submit-btn">Join VIP Club</button>
+ </form>
+ <br>
+ <p style="text-align: center; font-size: 14px;">
+ <a href="#" onclick="showPage('login-section')">Back to Login</a>
+ </p>
+ </div>
+ </div>
+</div>
+<!-- Footer -->
+<footer>
+ <p>
+ <a href="#">About Us</a> |
+ <a href="#">Contact</a> |
+ <a href="#">Help & FAQs</a> |
+ <a href="#">Privacy Policy</a>
+ </p>
+ <p>&copy; 2026 GiftNest. All Rights Reserved.</p>
+</footer>
+<!-- JavaScript for Switching Pages -->
+<script>
+ // Function to switch visible section
+ function showPage(pageId) {
+ // 1. Get all sections with class 'page-section'
+ var sections = document.querySelectorAll('.page-section');
+ // 2. Loop through each section and hide it
+ for (var i = 0; i < sections.length; i++) {
+ sections[i].style.display = 'none';
+ }
+ // 3. Display the target section
+ document.getElementById(pageId).style.display = 'block';
+ }
+</script>
+</body>
+</html>
